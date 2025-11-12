@@ -53,7 +53,7 @@ void checkComment()
 {
     string str;
     cout << "Enter string to check whether the string is comment or not: ";
-    cin >> str;
+    getline(cin >> ws, str);
     bool check = false;
     int len = str.size();
     cout << str[len];
@@ -81,7 +81,7 @@ void checkIndentifier()
 {
     string s;
     cout << "Enter indentifier name: ";
-    getline(cin >> ws, s);
+    cin >> s;
     bool isValid = true;
 
     if (!((s[0] >= 'A' && s[0] <= 'Z') ||
@@ -134,7 +134,7 @@ void findAverage()
 }
 
 /*Task 6*/
-int findMinMax()
+void findMinMax()
 {
     int size;
     cout << "Enter the array size: ";
@@ -150,9 +150,9 @@ int findMinMax()
     int max = arr[0];
     for (int i = 0; i < size; i++)
     {
-        if (min < arr[i])
+        if (min > arr[i])
             min = arr[i];
-        else if (max > arr[i])
+        else if (max < arr[i])
             max = arr[i];
     }
 
@@ -181,12 +181,12 @@ int main()
     cout << "Task 5: Print array's average." << endl;
     cout << "Task 6: Print min and max value of Array." << endl;
     cout << "Task 7: Concate first and last name." << endl;
-    
+
     int n;
     cout<< "\nSelect task no.: ";
     cin >> n;
     cin.ignore();
-    
+
     switch(n){
         case 1:
             isNumber();
