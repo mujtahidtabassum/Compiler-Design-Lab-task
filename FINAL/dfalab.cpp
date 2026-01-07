@@ -48,11 +48,16 @@ void computeDFA()
     }else{
         cout << str << " is not valid";
     }
+
+    cout << endl;
 }
 
 int main()
 {
-    computeDFA();
+    while(1)
+    {
+        computeDFA();
+    }
 }
 
 // bbba
