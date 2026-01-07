@@ -16,7 +16,7 @@ bool isKeyword(string str){
     return false;
 }
 
-vector<pair<string, string>> LexicalAnalyzer(string str)
+void LexicalAnalyzer(string str)
 {
      vector <pair<string, string>> tokens;
     for(int i = 0; i < str.size(); i++)
@@ -41,7 +41,7 @@ vector<pair<string, string>> LexicalAnalyzer(string str)
 
         }
 
-        else if(isdigit(c) || c == '-' || c == '.')
+        else if(isdigit(c) || c == '.')
         {
             token = "";
             token += c;
@@ -59,7 +59,7 @@ vector<pair<string, string>> LexicalAnalyzer(string str)
             tokens.push_back({"Operator", op});
         }
 
-        else if(c == ';' || c == ',' || c == '(' || c == ')' || c == '{' || c == '}')
+        else if(c == ';' || c == ',' || c == '(' || c == ')' || c == '{' || c == '}' || c =='<' || c == '>')
         {
             string op(1, c);
             tokens.push_back({"Punctuation", op});
@@ -71,7 +71,6 @@ vector<pair<string, string>> LexicalAnalyzer(string str)
         cout << token.first << ": " << token.second << endl;
     }
 
-    return tokens;
 }
 
 int main()
